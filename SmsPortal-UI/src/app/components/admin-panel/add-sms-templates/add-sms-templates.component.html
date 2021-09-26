@@ -1,0 +1,42 @@
+<div class="card card-body">
+  <table
+    class="
+      table
+      mb-0
+      table-striped table-sm table-bordered table-hover table-ragac
+    "
+  >
+    <thead>
+      <!-- <tr> -->
+      <th scope="col">სახელი</th>
+      <th scope="col">ტექსტი</th>
+      <th scope="col">სტატუსი</th>
+      <th scope="col" *ngIf="isAdmin">ავტორი</th>
+      <th scope="col" class="text-center">მოქმედება</th>
+      <!-- </tr> -->
+    </thead>
+
+    <tbody
+      *ngFor="let template of smsTemplatesService.smsTemplates; let i = index"
+    >
+      <tr>
+        <td>{{ template.title }}</td>
+        <td>{{ template.text | shorten: 100 }}</td>
+        <td>{{ template.isActive ? "აქტიური" : "გამორთული" }}</td>
+        <td *ngIf="isAdmin">{{ template.author }}</td>
+        <td class="text-center">
+          <a
+            [routerLink]="['/adminPanel/smstemplates/', template.smsTemplateId]"
+            class="btn btn-info btn-sm mx-1"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="დეტალები"
+          >
+            დეტალები <fa-icon [icon]="circleInfoIcon"></fa-icon>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <app-add-template-form></app-add-template-form>
+</div>

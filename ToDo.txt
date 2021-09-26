@@ -1,0 +1,22 @@
+Done 1)  Users can only see their own sent messages
+DONE 2)  Admin can see all logs 
+DONE 3)  Sent Sms log filter must be added
+DONE 4)  Admin can change user type
+DONE 5)  Add dropdown for country code on "Send Sms Form"
+DONE 6) sms ukutvla
+DONE 7) excel export gagzavnili sms jgupis
+
+
+
+
+9) date picker cxrilshi
+8) adresatis monacemebi:
+
+kategoria (null)
+jgupi (null)
+regioni (null)
+teleponis nomeri not (null)
+saxeli - gvari (null)
+p/n (null)
+
+

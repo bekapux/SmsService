@@ -1,0 +1,15 @@
+<mat-card class="pb-5">
+  <mat-tab-group (selectedTabChange)="detectChange()" dynamicHeight>
+    <div>
+      <mat-tab label="ადრესატები">
+        <app-recipients [inputEvent]="inputEvent"></app-recipients>
+      </mat-tab>
+    </div>
+    <mat-tab label="კატეგორიები">
+      <app-categories-edit></app-categories-edit>
+    </mat-tab>
+    <mat-tab label="ჯგუფები">
+      <app-groups-edit></app-groups-edit>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>

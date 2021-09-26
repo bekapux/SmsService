@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmsPortal.Web", "SmsPortal.Web\SmsPortal.Web.csproj", "{17EF364B-1FC0-42F6-976A-469CD009FE46}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmsPortal.Models", "SmsPortal.Models\SmsPortal.Models.csproj", "{E8340AA3-BEB6-4B2D-BDA0-6D925D87D232}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmsPortal.Repository", "SmsPortal.Repository\SmsPortal.Repository.csproj", "{7F032126-4D81-47E6-BFFD-C793AEF0D4A7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmsPortal.Identity", "SmsPortal.Identity\SmsPortal.Identity.csproj", "{948D5738-1A78-4EFE-B2A7-DAC86B3C7211}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmsPortal.Services", "SmsPortal.Services\SmsPortal.Services.csproj", "{A7057833-566B-4CA5-A442-98EA6FDB0115}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9B4B4C82-BC4E-4FA8-96DC-05132624DBB1}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17EF364B-1FC0-42F6-976A-469CD009FE46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17EF364B-1FC0-42F6-976A-469CD009FE46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17EF364B-1FC0-42F6-976A-469CD009FE46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17EF364B-1FC0-42F6-976A-469CD009FE46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8340AA3-BEB6-4B2D-BDA0-6D925D87D232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8340AA3-BEB6-4B2D-BDA0-6D925D87D232}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8340AA3-BEB6-4B2D-BDA0-6D925D87D232}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8340AA3-BEB6-4B2D-BDA0-6D925D87D232}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F032126-4D81-47E6-BFFD-C793AEF0D4A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F032126-4D81-47E6-BFFD-C793AEF0D4A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F032126-4D81-47E6-BFFD-C793AEF0D4A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F032126-4D81-47E6-BFFD-C793AEF0D4A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{948D5738-1A78-4EFE-B2A7-DAC86B3C7211}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{948D5738-1A78-4EFE-B2A7-DAC86B3C7211}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{948D5738-1A78-4EFE-B2A7-DAC86B3C7211}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{948D5738-1A78-4EFE-B2A7-DAC86B3C7211}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7057833-566B-4CA5-A442-98EA6FDB0115}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7057833-566B-4CA5-A442-98EA6FDB0115}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7057833-566B-4CA5-A442-98EA6FDB0115}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7057833-566B-4CA5-A442-98EA6FDB0115}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B770C9EE-6A27-4A1F-B2BF-B35B800AA273}
+	EndGlobalSection
+EndGlobal

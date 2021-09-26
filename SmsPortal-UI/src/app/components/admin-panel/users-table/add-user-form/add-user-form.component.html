@@ -1,0 +1,68 @@
+<div class="card card-body py-1 my-fix">
+  <form [formGroup]="registerForm" autocomplete="off" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <fa-icon [icon]="signatureIcon"></fa-icon>
+            </div>
+          </div>
+          <input
+            type="text"
+            formControlName="fullname"
+            class="form-control"
+            placeholder="სახელი"
+            autocomplete="new-password"
+
+            maxlength="30"
+          />
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text"> <fa-icon [icon]="userIcon"></fa-icon> </div>
+          </div>
+          <input
+            type="text"
+            formControlName="username"
+            autocomplete="false"
+            autocomplete="new-password"
+            class="form-control"
+            placeholder="ანგარიში"
+            minlength="4"
+            maxlength="20"
+          />
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text"> <fa-icon [icon]="keyIcon"></fa-icon> </div>
+          </div>
+          <input
+            type="password"
+            formControlName="password"
+            placeholder="პაროლი"
+            autocomplete="new-password"
+
+            class="form-control"
+            minlength="4"
+            maxlength="20"
+          />
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <select class="custom-select" formControlName="isAdmin">
+          <option [ngValue]="false">მომხმარებელი</option>
+          <option [ngValue]="true">ადმინისტრატორი</option>
+        </select>
+      </div>
+      <button type="submit" [disabled]="registerForm.invalid" class="btn btn-sm btn-block btn-success mx-3 mt-1">
+        <fa-icon [icon]="plusIcon"></fa-icon>
+      </button>
+    </div>
+  </form>
+</div>

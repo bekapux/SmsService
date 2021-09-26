@@ -1,0 +1,35 @@
+<div class="list-group list-group-flush opacity">
+  <div class="bg-light border-right" id="sidebar-wrapper">
+    <a
+      routerLink="/homepage"
+      routerLinkActive="active-fix"
+      [routerLinkActiveOptions]="{ exact: true }"
+      style="cursor: pointer"
+      class="list-group-item list-group-item-action bg-light"
+      >SMS გაგზავნა</a
+    >
+
+    <a
+      routerLink="/homepage/sentsms"
+      routerLinkActive="active-fix"
+      style="cursor: pointer"
+      class="list-group-item list-group-item-action bg-light"
+      >გაგზავნილი SMS ები</a
+    >
+    <a
+      *ngIf="!isAdmin"
+      routerLink="/adminPanel/smstemplates"
+      routerLinkActive="active-fix"
+      style="cursor: pointer"
+      class="list-group-item list-group-item-action bg-light"
+      >SMS თარგები</a
+    >
+    <a
+      routerLink="recipientmanager"
+      routerLinkActive="active-fix"
+      style="cursor: pointer"
+      class="list-group-item list-group-item-action bg-light"
+      >ადრესატები</a
+    >
+  </div>
+</div>

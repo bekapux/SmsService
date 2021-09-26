@@ -1,0 +1,68 @@
+<div class="card card-body">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="mb-1">
+        <table
+          id="details"
+          class="table mb-0 table-striped table-sm table-bordered table-hover"
+        >
+          <tbody>
+            <tr>
+              <td scope="col" style="min-width: 180px">ავტორი</td>
+              <td scope="col">{{ sentSmsSingle[0].fullName }}</td>
+            </tr>
+            <tr>
+              <td>გაგზავნის თარიღი</td>
+              <td>
+                {{ sentSmsSingle[0].dateSent | date: "MMM d, y, h:mm:ss a" }}
+              </td>
+            </tr>
+            <tr>
+              <td>გამგზავნი</td>
+              <td>{{ sentSmsSingle[0].serviceId }}</td>
+            </tr>
+            <tr>
+              <td>ტექსტი</td>
+              <td>{{ sentSmsSingle[0].text }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <a class="btn btn-outline-info mb-3 mr-2" routerLink="../">დაბრუნება</a>
+      <a
+        class="btn btn-success mb-3"
+        style="cursor: pointer"
+        (click)="exportexcel()"
+      >
+        გადმოწერა
+      </a>
+    </div>
+    <div class="col-md-6">
+      <table
+        id="statusList"
+        class="
+          table
+          mb-0
+          table-striped table-sm table-bordered table-hover
+          dataTable
+        "
+      >
+        <thead>
+          <tr>
+            <th scope="col">ადრესატი</th>
+            <th scope="col">სტატუსი</th>
+          </tr>
+        </thead>
+
+        <tbody *ngFor="let sent of sentSmsSingle">
+          <tr>
+            <td style="width: 20%">+{{ sent.recipientPhoneNumber }}</td>
+            <td style="width: 20%">
+              {{ sent.sentStatus == "0000" ? "გაგზავნილია" : "უცნობია" }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

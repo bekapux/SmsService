@@ -1,0 +1,47 @@
+<form [formGroup]="smsForm" (ngSubmit)="onSubmit()">
+  <div class="row p-3">
+    <div class="col-md-4">
+      <mat-form-field>
+        <mat-label>ჯგუფი</mat-label>
+        <mat-select formControlName="group">
+          <mat-option  *ngFor="let group of groups" [value]="group.groupName">{{
+            group.groupName
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>კატეგორია</mat-label>
+        <mat-select formControlName="category">
+          <mat-option
+            *ngFor="let category of categories"
+            [value]="category.categoryName"
+            >{{ category.categoryName }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-md-8">
+      <mat-form-field style="width: 100%" appearance="outline">
+        <textarea
+          matInput
+          formControlName="message"
+          class="form-control mb-3"
+          placeholder="შეტყობინება"
+          formControlName="message"
+          required
+        ></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <button
+      mat-raised-button
+      color="primary"
+      class="btn-block"
+      type="submit"
+    >
+      გაგზავნა
+    </button>
+  </div>
+</form>

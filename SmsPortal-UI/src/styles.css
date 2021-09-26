@@ -1,0 +1,53 @@
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-alpine.css";
+
+*{
+  outline: none;
+  font-family: DejavuSans;
+}
+
+.successBtn {
+  background-color: #887177;
+  color: white;
+}
+.successBtn:hover{
+  background-color: #3A2F0B;
+  color: white;
+}
+body{
+  /* background: url(./assets/images/background.svg) no-repeat center center/cover;
+  background-attachment: fixed; */
+  margin-top: 52px;
+}
+
+.btn-inspector-secondary{
+  background-color:#665840;
+  color: white;
+  opacity: 1;
+  transition: 0.2s;
+}
+.btn-inspector-secondary:hover{
+    color: white ;
+}
+
+textarea{
+  font-family: NotoSansGeorgianLight;
+}
+
+
+@font-face {
+  font-family: Mtavruli;
+  src: url(./assets/fonts/archyedt-bold.otf);
+}
+@font-face {
+  font-family: DejavuSans;
+  src: url(./assets/fonts/bpg_dejavu_sans.otf);
+}
+@font-face {
+  font-family: NotoSansGeorgianLight;
+  src: url(./assets/fonts/NotoSansGeorgian-Light.ttf);
+}
+@font-face {
+  font-family: RobotoMono;
+  src: url(./assets/fonts/RobotoMono-Regular.ttf);
+}

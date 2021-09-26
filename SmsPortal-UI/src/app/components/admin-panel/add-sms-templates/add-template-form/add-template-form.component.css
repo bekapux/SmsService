@@ -1,0 +1,17 @@
+.id {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.col,
+.col-2 {
+  padding: 0 3px;
+}
+.my-fix {
+  background-color: #c1c3c5;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-right: 0;
+  margin-top: -2px;
+  border: #dee2e6 1px solid;
+}

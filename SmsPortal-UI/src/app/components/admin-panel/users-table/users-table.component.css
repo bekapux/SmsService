@@ -1,0 +1,8 @@
+.table-info>td, .table-info>th{
+  background-color: #CBCDD0;
+}
+.row-fix{
+  display: flex;;
+  justify-content: center;
+  align-items: center;
+}

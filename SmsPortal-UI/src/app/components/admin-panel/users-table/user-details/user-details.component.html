@@ -1,0 +1,105 @@
+<div class="card card-body">
+  <table class="table mb-0 table-striped table-sm table-bordered table-hover">
+    <thead>
+      <tr>
+        <th scope="col" style="min-width: 180px">ID</th>
+        <th scope="col">{{ applicationUser.applicationUserId }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>სახელი</td>
+        <td>{{ applicationUser.fullname }}</td>
+      </tr>
+      <tr>
+        <td>ანგარიში</td>
+        <td>{{ applicationUser.username }}</td>
+      </tr>
+      <tr>
+        <td>მომხმარებლის ტიპი</td>
+        <td>
+          {{
+            applicationUser.isAdmin === true ? "ადმინისტრატორი" : "მომხმარებელი"
+          }}
+        </td>
+      </tr>
+      <tr>
+        <td>შექმნის თარიღი</td>
+        <td>
+          {{ applicationUser.userCreationDate | date: "MMM d, y, h:mm:ss a" }}
+        </td>
+      </tr>
+      <tr>
+        <td>აქტიურობა</td>
+        <td>
+          {{ applicationUser.isActive === true ? "აქტიური" : "გამორთული" }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="d-flex mt-2">
+    <button mat-raised-button class="mr-2" routerLink="../../">
+      დაბრუნება
+    </button>
+    <button
+      (click)="promote(applicationUser.applicationUserId)"
+      *ngIf="!applicationUser.isAdmin"
+      mat-raised-button color="primary"
+    >
+      ადმინისტრატორად დანიშვნა
+    </button>
+    <button
+      (click)="denote(applicationUser.applicationUserId)"
+      *ngIf="applicationUser.isAdmin"
+      mat-raised-button color="primary"
+    >
+      ადმინისტრატორის სტატუსის მოხსნა
+    </button>
+  </div>
+</div>
+
+<div class="chasworeba" *ngIf="editMode">
+  <div class="overlay" *ngIf="editMode" (click)="editMode = false"></div>
+  <div class="container" style="z-index: 10">
+    <div class="row">
+      <div class="col-4 mx-auto">
+        <form [formGroup]="userEditForm" (ngSubmit)="onSubmit()">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">ჩასწორება</div>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label>სახელი</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  formControlName="fullname"
+                />
+              </div>
+              <div class="form-group">
+                <label>მომხმარებლის ტიპი</label>
+                <select class="form-control" formControlName="isAdmin">
+                  <option selected [ngValue]="false">მომხმარებელი</option>
+                  <option [ngValue]="true">ადმინისტრატორი</option>
+                </select>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="text-right">
+                <button
+                  class="mr-4 btn btn-info"
+                  type="button"
+                  (click)="editMode = false"
+                >
+                  გაუქმება
+                </button>
+                <button type="submit" class="btn btn-success">შენახვა</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

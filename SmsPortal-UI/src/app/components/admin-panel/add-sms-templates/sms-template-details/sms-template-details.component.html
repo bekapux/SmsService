@@ -1,0 +1,95 @@
+<div class="card card-body">
+  <table class="table mb-0 table-striped table-sm table-bordered table-hover">
+    <thead>
+      <tr>
+        <th scope="col" style="min-width: 180px">ID</th>
+        <th scope="col">{{ smsTemplate.smsTemplateId }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ავტორი</td>
+        <td>{{ smsTemplate.author }}</td>
+      </tr>
+      <tr>
+        <td>შექმნის თარიღი</td>
+        <td>{{ smsTemplate.dateCreated }}</td>
+      </tr>
+      <tr>
+        <td>სათაური</td>
+        <td>{{ smsTemplate.title }}</td>
+      </tr>
+      <tr>
+        <td>ტექსტი</td>
+        <td>{{ smsTemplate.text }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="d-flex mt-2">
+    <button mat-raised-button routerLink="../" class="mr-2">დაბრუნება</button>
+    <button mat-raised-button color="warn" (click)="editMode = true">
+      ჩასწორება
+    </button>
+  </div>
+</div>
+
+<div class="chasworeba" *ngIf="editMode">
+  <div class="overlay" *ngIf="editMode" (click)="editMode = false"></div>
+  <div class="container" style="z-index: 10">
+    <div class="row">
+      <div class="col-9 mx-auto">
+        <form [formGroup]="smsTemplateEditForm" (ngSubmit)="onSubmit()">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">ჩასწორება</div>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label>სახელი</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  formControlName="title"
+                />
+              </div>
+
+              <div class="form-group">
+                <label>ტექსტი</label>
+                <textarea
+                  class="form-control"
+                  rows="4"
+                  formControlName="text"
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label>სტატუსი</label>
+                <select class="form-control" formControlName="isActive">
+                  <option selected [ngValue]="false">გამორთული</option>
+                  <option [ngValue]="true">აქტიური</option>
+                </select>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="text-right">
+                <button
+                  class="mr-4 btn btn-info"
+                  type="button"
+                  (click)="editMode = false"
+                >
+                  გაუქმება
+                </button>
+                <button
+                  type="submit"
+                  [disabled]="smsTemplateEditForm.invalid"
+                  class="btn btn-success"
+                >
+                  შენახვა
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

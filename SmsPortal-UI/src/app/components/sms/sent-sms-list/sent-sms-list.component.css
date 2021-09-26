@@ -1,0 +1,16 @@
+.filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  display: flex;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  padding-top: 1rem;
+  padding-left: 2rem;
+  padding-right: 9rem;
+}

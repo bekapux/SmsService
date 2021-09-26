@@ -1,0 +1,54 @@
+<div class="list-group list-group-flush" style="background-color: white;">
+  <div class="bg-light border-right" id="sidebar-wrapper" *ngIf="isAdmin">
+    <a
+      routerLink="/adminPanel"
+      routerLinkActive="active-fix"
+      [routerLinkActiveOptions]="{ exact: true }"
+      style="cursor: pointer"
+      class="list-group-item list-group-item-action bg-light"
+      >მომხმარებლები</a
+    >
+
+    <a
+      routerLink="/adminPanel/smstemplates"
+      routerLinkActive="active-fix"
+      style="cursor: pointer"
+      class="list-group-item list-group-item-action bg-light"
+      >SMS თარგები</a
+    >
+  </div>  
+
+  <div class="bg-light border-right" id="sidebar-wrapper" *ngIf="!isAdmin">
+    <a
+      routerLink="/homepage"
+      routerLinkActive="active-fix"
+      [routerLinkActiveOptions]="{ exact: true }"
+      style="cursor: pointer"
+      class="list-group-item list-group-item-action bg-light"
+      >SMS გაგზავნა</a
+    >
+
+    <a
+      routerLink="/homepage/sentsms"
+      routerLinkActive="active-fix"
+      style="cursor: pointer"
+      class="list-group-item list-group-item-action bg-light"
+      >გაგზავნილი SMS ები</a
+    >
+    <a
+      routerLink="/adminPanel/smstemplates"
+      routerLinkActive="active-fix"
+      style="cursor: pointer"
+      class="list-group-item list-group-item-action bg-light"
+      >SMS თარგები</a
+    >
+    <a
+      routerLink="/homepage/recipientmanager"
+      routerLinkActive="active-fix"
+      style="cursor: pointer"
+      class="list-group-item list-group-item-action bg-light"
+      >ადრესატები</a
+    >
+  </div>
+
+</div>

@@ -1,0 +1,73 @@
+<nav
+  class="navbar navbar-expand-sm fixed-top navbar-dark"
+  style="background-color: #0a182d; z-index: 5;"
+>
+  <a
+    class="navbar-brand"
+    routerLink="/"
+    style="text-decoration: none; cursor: pointer"
+  >
+    <img
+      height="40"
+      src="../../../assets/images/logo.svg"
+      class="navbar-brand"
+    />SMS პორტალი
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="nav navbar-nav ml-auto" *ngIf="accountService.isLoggedIn()">
+      <li
+        *ngIf="this.accountService.currentUserSubject$._value.isAdmin == true"
+        class="nav-item"
+      >
+        <a routerLink="/adminPanel" routerLinkActive="active" class="nav-link"
+          >ადმინ-პანელი</a
+        >
+      </li>
+      <li
+        *ngIf="this.accountService.currentUserSubject$._value.isAdmin == true"
+        class="nav-item"
+      >
+        <a routerLink="/homepage" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}" class="nav-link"
+          >სმს გაგზავნა</a
+        >
+      </li>
+      <div class="dropdown" (click)="onAccountClick()">
+        <li class="nav-item">
+          <a
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            class="nav-link"
+            style="cursor: pointer"
+          >
+            <fa-icon
+              *ngIf="this.accountService.currentUserValue.isAdmin"
+              [icon]="adminIcon"
+            ></fa-icon>
+            <fa-icon
+              *ngIf="!this.accountService.currentUserValue.isAdmin"
+              [icon]="userIcon"
+            ></fa-icon>
+            {{ accountService.currentUserValue.fullname }}
+            <fa-icon [icon]="caretDownIcon"></fa-icon
+          ></a>
+          <div *ngIf="exitVisible" class="dropdown-menumy">
+            <a class="dropdown-item" style="cursor: pointer" (click)="logout()"
+              >გამოსვლა <fa-icon [icon]="signOutIcon"></fa-icon>
+            </a>
+          </div>
+        </li>
+      </div>
+    </ul>
+  </div>
+</nav>

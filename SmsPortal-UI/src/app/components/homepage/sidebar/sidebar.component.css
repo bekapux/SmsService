@@ -1,0 +1,17 @@
+.list-group {
+  height: 94.5vh;
+}
+.active-fix{
+  background-color: #DAE0E5 !important;
+}
+.opacity{
+  background-color: #fff;
+}
+.list-group-item {
+  border: none;
+}
+@media (max-width: 768px) {
+  .list-group {
+    height: unset;
+  }
+}

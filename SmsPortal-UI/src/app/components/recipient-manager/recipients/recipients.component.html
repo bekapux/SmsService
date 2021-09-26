@@ -1,0 +1,118 @@
+<div class="container-fluid pt-3 mb-2">
+  <div class="row">
+    <div class="col-md-6 col-sx-12">
+      <form [formGroup]="addRecipientForm" (ngSubmit)="onSubmit()">
+        <mat-card>
+          <mat-card-header>
+            <div mat-card-avatar></div>
+            <mat-card-title>ადრესატის დამატება</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="row">
+              <div class="col-md-12 col-lg-4">
+                <mat-form-field>
+                  <mat-label>სახელი</mat-label>
+                  <input
+                    matInput
+                    type="text"
+                    formControlName="firstName"
+                    maxlength="20"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="col-md-12 col-lg-4">
+                <mat-form-field>
+                  <mat-label>გვარი</mat-label>
+                  <input
+                    matInput
+                    type="text"
+                    formControlName="lastName"
+                    maxlength="20"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="col-md-12 col-lg-4">
+                <mat-form-field>
+                  <mat-label>ტელეფონის ნომერი</mat-label>
+                  <input
+                    matInput
+                    type="text"
+                    formControlName="phoneNumber"
+                    maxlength="20"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 col-lg-6">
+                <mat-form-field>
+                  <mat-label>კატეგორია</mat-label>
+                  <mat-select required formControlName="category">
+                    <mat-option
+                      *ngFor="let category of categories; let i = index"
+                      [value]="category.categoryName"
+                    >
+                      {{ category.categoryName }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-12 col-lg-6">
+                <mat-form-field>
+                  <mat-label>ჯგუფი</mat-label>
+                  <mat-select required formControlName="group">
+                    <mat-option
+                      *ngFor="let group of groups; let i = index"
+                      [value]="group.groupName"
+                    >
+                      {{ group.groupName }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-card-content>
+          <mat-divider inset></mat-divider>
+          <mat-card-actions>
+            <button mat-raised-button [disabled]="addRecipientForm.invalid">
+              <fa-icon [icon]="plusIcon"></fa-icon> დამატება
+            </button>
+            <button
+              mat-raised-button
+              type="button"
+              color="warn"
+              (click)="this.addRecipientForm.reset()"
+            >
+              გასუფთავება
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </form>
+    </div>
+    <div class="col-md-6 col-sx-12">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>ადრესატების ექსელის ცხრილით ატვირთვა</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <input
+            type="file"
+            style="display: inline-block"
+            (change)="incomingfile($event)"
+            placeholder="არჩევა"
+            accept=".xlsx"
+          />
+        </mat-card-content>
+        <mat-divider inset></mat-divider>
+
+        <mat-card-actions>
+          <button type="button" mat-raised-button (click)="Upload()">
+            ატვირთვა
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
