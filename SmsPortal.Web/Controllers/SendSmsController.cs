@@ -40,7 +40,7 @@ namespace SmsPortal.Web.Controllers
                 string smsOff="";
                 if (sendSms.SmsOff == true)
                 {
-                    smsOff = " NOSMS 91940";
+                    smsOff = " NOSMS *****";
                 }
 
                 if (sendSms.Encoding == 1)
